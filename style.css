@@ -4022,3 +4022,24 @@ body {
             align-items: center !important;
         }
 }
+
+/* ============================================
+   ГЛОБАЛЬНЫЙ ОТСТУП ПОД ФИКСИРОВАННУЮ ШАПКУ
+   — ШАПКА БОЛЬШАЯ И ОДИНАКОВАЯ НА ВСЕХ СТРАНИЦАХ МОБИЛЬНЫХ
+   ============================================ */
+@media (max-width: 1279px) {
+  body {
+    padding-top: 80px !important;  /* отодвигает весь контент под шапку */
+  }
+
+  /* Убираем лишние margin/padding у первых секций */
+  .hero,
+  .nature-rules-hero,
+  .tips-hero,
+  .main-content,
+  section:first-of-type,
+  .container > section:first-child {
+    margin-top: 0 !important;
+    padding-top: 20px !important;  /* небольшой воздух сверху */
+  }
+}
