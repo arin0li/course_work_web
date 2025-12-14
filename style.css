@@ -1302,6 +1302,7 @@ body {
   color: #2D5016;
   font-family: 'Open Sans', sans-serif;
   font-weight: bold;
+  font-size:22px;
 }
 .modal__close:hover {
   background: rgba(255, 0, 0, 0.9);
@@ -3830,8 +3831,8 @@ body {
 /* Планшеты (768-1024px) */
 @media (max-width: 1024px) {
     .back-to-top-btn {
-        width: 56px !important;
-        height: 56px !important;
+        width: 76px !important;
+        height: 76px !important;
         font-size: 24px !important;
         right: 24px !important;
         bottom: 28px !important;
@@ -3842,8 +3843,8 @@ body {
 /* Мобильные (до 767px) */
 @media (max-width: 767px) {
     .back-to-top-btn {
-        width: 60px !important;
-        height: 60px !important;
+        width: 90px !important;
+        height: 90px !important;
         font-size: 26px !important;
         right: 18px !important;
         bottom: 20px !important;
@@ -3854,8 +3855,8 @@ body {
 /* Маленькие мобильные (до 480px) */
 @media (max-width: 480px) {
     .back-to-top-btn {
-        width: 64px !important;
-        height: 64px !important;
+        width: 84px !important;
+        height: 84px !important;
         font-size: 28px !important;
         right: 16px !important;
         bottom: 18px !important;
@@ -3934,7 +3935,7 @@ body {
 
   /* ОПИСАНИЕ — БОЛЬШЕ ОТСТУПА СНИЗУ, НЕ ЗАХОДИТ НА ХАРАКТЕРИСТИКИ */
   .routes-card__desc{
-    font-size: 22px !important;         /* крупный текст */
+    font-size: 20px !important;         /* крупный текст */
     line-height: 1.8 !important;
     top: 350px !important;              /* ниже характеристик — большой отступ сверху */
     bottom: 140px !important;           /* большой отступ снизу до кнопки */
@@ -3947,7 +3948,7 @@ body {
 
 
   .attraction-card__desc {
-    font-size: 22px !important;         /* крупный текст */
+    font-size: 20px !important;         /* крупный текст */
     line-height: 1.8 !important;
     top: 280px !important;              /* ниже характеристик — большой отступ сверху */
     bottom: 140px !important;           /* большой отступ снизу до кнопки */
