@@ -3949,7 +3949,7 @@ body {
 /* === МАРШРУТЫ — то же самое, но с учётом характеристик === */
 .routes-card__desc {
   position: absolute;
-  top: 355px !important;              /* ниже характеристик (info на ~240-300px) */
+  top: 375px !important;              /* ниже характеристик (info на ~240-300px) */
   bottom: 120px !important;            /* большой отступ снизу до кнопки */
   left: 3vw !important;
   right: 3vw !important;
