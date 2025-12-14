@@ -3935,7 +3935,7 @@ body {
 
   /* ОПИСАНИЕ — БОЛЬШЕ ОТСТУПА СНИЗУ, НЕ ЗАХОДИТ НА ХАРАКТЕРИСТИКИ */
   .routes-card__desc{
-    font-size: 18px !important;         /* крупный текст */
+    font-size: 22px !important;         /* крупный текст */
     line-height: 1.8 !important;
     top: 350px !important;              /* ниже характеристик — большой отступ сверху */
     bottom: 140px !important;           /* большой отступ снизу до кнопки */
@@ -3948,7 +3948,7 @@ body {
 
 
   .attraction-card__desc {
-    font-size: 18px !important;         /* крупный текст */
+    font-size: 22px !important;         /* крупный текст */
     line-height: 1.8 !important;
     top: 280px !important;              /* ниже характеристик — большой отступ сверху */
     bottom: 140px !important;           /* большой отступ снизу до кнопки */
