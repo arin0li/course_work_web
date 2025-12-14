@@ -1297,7 +1297,12 @@ body {
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
   line-height: 1;
 }
-
+.modal__btn{
+  text-decoration: none;
+  color: #2D5016;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: bold;
+}
 .modal__close:hover {
   background: rgba(255, 0, 0, 0.9);
   border-color: #fff;
@@ -2020,6 +2025,8 @@ body {
   line-height: 1.6;
   color: #555;
 }
+
+
 
 /* Адаптивность для tips.html */
 @media (max-width: 767px) {
@@ -3864,4 +3871,140 @@ body {
         right: 12px !important;
         bottom: 14px !important;
     }
+}
+@media (min-width: 768px) and (max-width: 1279px) {
+  /* Отступы секций */
+  .attractions,
+  .routes,
+  .tips,
+  .about,
+  .contact {
+    padding-top: 130px !important;
+    padding-bottom: 100px !important;
+  }
+
+  /* Заголовки секций */
+  .attractions__title,
+  .routes__title,
+  .tips__title,
+  .about__title,
+  .contact__title {
+    font-size: 36px !important;
+    padding: 0 30px !important;
+  }
+
+  /* Карточки — одна колонка, растягиваются */
+  .attractions__grid,
+  .routes__grid {
+    grid-template-columns: 1fr !important;
+    gap: 60px !important;
+    padding: 0 30px !important;
+    max-width: 900px !important;
+    margin: 0 auto !important;
+  }
+
+  .attraction-card,
+  .routes-card {
+    width: 100% !important;
+    max-width: 100% !important;
+    height: auto !important;
+    min-height: 650px !important;
+    margin: 0 auto !important;
+  }
+
+  /* Заголовок карточки — крупнее */
+  .attraction-card__name,
+  .routes-card__name {
+    font-size: 28px !important;
+    top: 180px !important;
+    left: 40px !important;
+    right: 40px !important;
+  }
+
+  /* ХАРАКТЕРИСТИКИ МАРШРУТОВ — фиксируем выше */
+  .routes-card__info {
+    top: 240px !important;              /* чуть ниже заголовка */
+    left: 40px !important;
+  }
+
+  .routes-card__info-item {
+    font-size: 16px !important;
+    margin-bottom: 8px !important;
+  }
+
+  /* ОПИСАНИЕ — БОЛЬШЕ ОТСТУПА СНИЗУ, НЕ ЗАХОДИТ НА ХАРАКТЕРИСТИКИ */
+  .routes-card__desc{
+    font-size: 22px !important;         /* крупный текст */
+    line-height: 1.8 !important;
+    top: 350px !important;              /* ниже характеристик — большой отступ сверху */
+    bottom: 140px !important;           /* большой отступ снизу до кнопки */
+    left: 40px !important;
+    right: 40px !important;
+    max-height: none !important;
+    overflow: visible !important;
+    margin-bottom: 40px !important;     /* дополнительный воздух снизу */
+  }
+
+
+  .attraction-card__desc {
+    font-size: 22px !important;         /* крупный текст */
+    line-height: 1.8 !important;
+    top: 280px !important;              /* ниже характеристик — большой отступ сверху */
+    bottom: 140px !important;           /* большой отступ снизу до кнопки */
+    left: 40px !important;
+    right: 40px !important;
+    max-height: none !important;
+    overflow: visible !important;
+    margin-bottom: 40px !important;     /* дополнительный воздух снизу */
+  }
+
+  /* Кнопка — внизу с отступом */
+  .attraction-card__btn,
+  .routes-card__btn {
+    font-size: 16px !important;
+    padding: 14px 34px !important;
+    bottom: 50px !important;
+    left: 40px !important;
+  }
+
+  /* Советы — крупный текст */
+  .tips__content {
+    grid-template-columns: 1fr !important;
+    gap: 50px !important;
+    padding: 0 30px !important;
+  }
+
+  .tips__top {
+    grid-template-columns: 1fr !important;
+    gap: 40px !important;
+  }
+
+  .tip-card--small,
+  .tip-card--large {
+    width: 100% !important;
+    max-width: 900px !important;
+    height: auto !important;
+    min-height: 350px !important;
+    padding: 50px 40px !important;
+    justify-content: center !important;
+    text-align: center !important;
+  }
+
+  .tip-card__title {
+    font-size: 28px !important;
+    margin-bottom: 25px !important;
+  }
+
+  .tip-card__text {
+    font-size: 19px !important;
+    line-height: 1.8 !important;
+  }
+
+  .tip-card i {
+    font-size: 60px !important;
+    margin-bottom: 30px !important;
+  }
+ .about__content {
+            align-items: center !important;
+        }
 }
