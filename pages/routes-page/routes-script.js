@@ -70,7 +70,7 @@ document.addEventListener('DOMContentLoaded', function() {
   }
 
   // Загрузка данных из JSON через axios
-  axios.get('../blocks/card__json/routes-data.json')
+  axios.get('../../blocks/card__json/routes-data.json')
     .then(function(response) {
       const routes = response.data.routes;
       
