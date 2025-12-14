@@ -215,7 +215,7 @@
    ============================================ */
 
 /* Планшет (768px - 1023px) */
-@media (min-width: 768px) and (max-width: 1023px) {
+@media (min-width: 768px) and (max-width: 1024px) {
   .footer {
     padding: 50px 20px 35px;
   }
@@ -404,5 +404,92 @@
 
   .footer__link {
     font-size: 13px;
+  }
+}
+
+/* КРУПНЫЙ ФУТЕР ДО 900 PX — БОЛЬШИЕ ШРИФТЫ И ОТСТУПЫ */
+@media (max-width: 900px) {
+  .footer {
+    padding: 70px 20px 60px !important;  /* много воздуха сверху/снизу */
+  }
+
+  .footer__container {
+    grid-template-columns: 1fr !important;  /* одна колонка */
+    gap: 50px !important;                   /* большие отступы между колонками */
+    text-align: center !important;
+  }
+
+  .footer__column-logo,
+  .footer__column-nav,
+  .footer__column-contacts,
+  .footer__column-right {
+    align-items: center !important;
+  }
+
+  /* Логотип — очень крупный */
+  .footer__logo {
+    font-size: 32px !important;
+    margin-bottom: 15px !important;
+  }
+
+  /* Заголовки колонок */
+  .footer__nav-title,
+  .footer__contacts-title {
+    font-size: 22px !important;
+    margin-bottom: 20px !important;
+  }
+
+  /* Ссылки навигации */
+  .footer__link {
+    font-size: 18px !important;
+    padding: 10px 0 !important;
+  }
+
+  .footer__nav {
+    gap: 12px !important;
+  }
+
+  /* Адрес и часы */
+  .footer__address-label,
+  .footer__hours-label {
+    font-size: 18px !important;
+    font-weight: 700 !important;
+  }
+
+  .footer__address-text,
+  .footer__hours-text,
+  .footer__hours-item {
+    font-size: 17px !important;
+    line-height: 1.7 !important;
+  }
+
+  .footer__address-block,
+  .footer__hours-block {
+    gap: 15px !important;
+  }
+
+  /* Телефон и почта */
+  .footer__phone {
+    font-size: 24px !important;
+    font-weight: 700 !important;
+  }
+
+  .footer__email {
+    font-size: 19px !important;
+  }
+
+  /* Соцсети */
+  .footer__socials-label {
+    font-size: 18px !important;
+    margin-bottom: 20px !important;
+  }
+
+  .footer__socials {
+    gap: 25px !important;
+  }
+
+  .footer__icon {
+    width: 50px !important;
+    height: 50px !important;
   }
 }
