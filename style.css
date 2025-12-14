@@ -3955,7 +3955,7 @@ body {
   right: 3vw !important;    /* одинаково на всех устройствах */
   padding: 0 10px;          /* дополнительная защита от обрезки */
   box-sizing: border-box;
-  font-size: 12px;
+  font-size: 22px;
   line-height: 1.65;
   max-height: 497px - 279px - 129px;
   overflow: hidden;
