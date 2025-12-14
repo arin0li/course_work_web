@@ -3938,7 +3938,6 @@ body {
   overflow: visible !important;
   margin: 0 !important;
 }
-
 /* Кнопка — выше, чтобы не налезало */
 .attraction-card__btn {
   bottom: 40px !important;
