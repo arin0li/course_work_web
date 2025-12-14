@@ -3928,8 +3928,8 @@ body {
   position: absolute;
   top: 280px !important;             /* ниже заголовка */
   bottom: 100px !important;           /* большой отступ снизу до кнопки */
-  left: 5vw !important;               /* адаптивно, чуть больше на маленьких экранах */
-  right: 5vw !important;
+  left: 3vw !important;               /* адаптивно, чуть больше на маленьких экранах */
+  right: 3vw !important;
   padding: 0 15px !important;         /* защита от обрезки */
   box-sizing: border-box !important;
   font-size: 22px !important;         /* крупный текст */
@@ -3965,7 +3965,7 @@ body {
 
 .routes-card__btn {
   bottom: 40px !important;
-  left: 5vw !important;
+  left: 3vw !important;
   font-size: 16px !important;
   padding: 14px 32px !important;
 }
