@@ -154,13 +154,22 @@
         padding: 20px 10px !important;
     }
 
-    /* Компактный футер на мобильных для страницы карты региона */
+    /* Компактный футер на мобильных для страницы карты региона (как на главной) */
     .footer {
         padding: 50px 20px 40px !important;
     }
 
     .footer__container {
+        grid-template-columns: 1fr !important;
         gap: 35px !important;
+        text-align: center !important;
+    }
+
+    .footer__column-logo,
+    .footer__column-nav,
+    .footer__column-contacts,
+    .footer__column-right {
+        align-items: center !important;
     }
 
     .footer__logo {
@@ -225,6 +234,87 @@
     }
 }
 
+
+/* Переопределение большого футера для страницы карты региона */
+@media (max-width: 1100px) {
+    .footer {
+        padding: 50px 20px 40px !important;
+    }
+
+    .footer__container {
+        grid-template-columns: 1fr !important;
+        gap: 35px !important;
+        text-align: center !important;
+    }
+
+    .footer__column-logo,
+    .footer__column-nav,
+    .footer__column-contacts,
+    .footer__column-right {
+        align-items: center !important;
+    }
+
+    .footer__logo {
+        font-size: 26px !important;
+        margin-bottom: 10px !important;
+    }
+
+    .footer__nav-title,
+    .footer__contacts-title {
+        font-size: 18px !important;
+        margin-bottom: 15px !important;
+    }
+
+    .footer__link {
+        font-size: 16px !important;
+        padding: 8px 0 !important;
+    }
+
+    .footer__nav {
+        gap: 8px !important;
+    }
+
+    .footer__address-label,
+    .footer__hours-label {
+        font-size: 16px !important;
+        font-weight: 700 !important;
+    }
+
+    .footer__address-text,
+    .footer__hours-text,
+    .footer__hours-item {
+        font-size: 16px !important;
+        line-height: 1.6 !important;
+    }
+
+    .footer__address-block,
+    .footer__hours-block {
+        gap: 10px !important;
+    }
+
+    .footer__phone {
+        font-size: 20px !important;
+        font-weight: 700 !important;
+    }
+
+    .footer__email {
+        font-size: 17px !important;
+    }
+
+    .footer__socials-label {
+        font-size: 16px !important;
+        margin-bottom: 15px !important;
+    }
+
+    .footer__socials {
+        gap: 20px !important;
+    }
+
+    .footer__icon {
+        width: 44px !important;
+        height: 44px !important;
+    }
+}
 
 @media (min-width: 768px) and (max-width: 1023px) {
     .region-map-hero {
