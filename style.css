@@ -3923,52 +3923,64 @@ body {
   }
 
   /* ХАРАКТЕРИСТИКИ МАРШРУТОВ — фиксируем выше */
-  .routes-card__info {
-    top: 240px !important;              /* чуть ниже заголовка */
-    left: 40px !important;
-  }
-
-  .routes-card__info-item {
-    font-size: 16px !important;
-    margin-bottom: 8px !important;
-  }
-
-  /* ОПИСАНИЕ — БОЛЬШЕ ОТСТУПА СНИЗУ, НЕ ЗАХОДИТ НА ХАРАКТЕРИСТИКИ */
-  .routes-card__desc{
-    font-size: 22px !important;         /* крупный текст */
-    line-height: 1.8 !important;
-    top: 350px !important;              /* ниже характеристик — большой отступ сверху */
-    bottom: 140px !important;           /* большой отступ снизу до кнопки */
-    left: 3vw !important; 
-    right: 3vw !important; 
-    padding: 0 10px;
-    max-height: none !important;
-    overflow: visible !important;
-    margin-bottom: 40px !important;     /* дополнительный воздух снизу */
-  }
-
-
+/* Описание в карточках достопримечательностей — крупный текст, безопасные отступы */
 .attraction-card__desc {
   position: absolute;
-  top: 260px;
-  left: 3vw !important;     /* вместо 41px — адаптивные отступы */
-  right: 3vw !important;    /* одинаково на всех устройствах */
-  padding: 0 10px;          /* дополнительная защита от обрезки */
-  box-sizing: border-box;
-  font-size: 22px;
-  line-height: 1.65;
-  max-height: 497px - 279px - 129px;
-  overflow: hidden;
+  top: 280px !important;             /* ниже заголовка */
+  bottom: 100px !important;           /* большой отступ снизу до кнопки */
+  left: 5vw !important;               /* адаптивно, чуть больше на маленьких экранах */
+  right: 5vw !important;
+  padding: 0 15px !important;         /* защита от обрезки */
+  box-sizing: border-box !important;
+  font-size: 22px !important;         /* крупный текст */
+  line-height: 1.6 !important;
+  max-height: none !important;
+  overflow: visible !important;
+  margin: 0 !important;
 }
 
-  /* Кнопка — внизу с отступом */
-  .attraction-card__btn,
-  .routes-card__btn {
-    font-size: 16px !important;
-    padding: 14px 34px !important;
-    bottom: 50px !important;
-    left: 40px !important;
-  }
+/* Кнопка — выше, чтобы не налезало */
+.attraction-card__btn {
+  bottom: 40px !important;
+  left: 5vw !important;
+  font-size: 16px !important;
+  padding: 14px 32px !important;
+}
+
+/* === МАРШРУТЫ — то же самое, но с учётом характеристик === */
+.routes-card__desc {
+  position: absolute;
+  top: 340px !important;              /* ниже характеристик (info на ~240-300px) */
+  bottom: 120px !important;            /* большой отступ снизу до кнопки */
+  left: 5vw !important;
+  right: 5vw !important;
+  padding: 0 15px !important;
+  box-sizing: border-box !important;
+  font-size: 22px !important;
+  line-height: 1.6 !important;
+  max-height: none !important;
+  overflow: visible !important;
+  margin: 0 !important;
+}
+
+.routes-card__btn {
+  bottom: 40px !important;
+  left: 5vw !important;
+  font-size: 16px !important;
+  padding: 14px 32px !important;
+}
+
+/* Характеристики маршрутов — фиксируем позицию */
+.routes-card__info {
+  top: 250px !important;               /* выше описания */
+  left: 5vw !important;
+  right: 5vw !important;
+  padding: 0 15px !important;
+}
+
+.routes-card__info-item {
+  font-size: 18px !important;         /* чуть крупнее для баланса */
+}
 
   /* Советы — крупный текст */
   .tips__content {
