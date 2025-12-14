@@ -274,3 +274,96 @@
     }
 }
 
+/* ============================================
+   УЛУЧШЕННАЯ АДАПТАЦИЯ ШАПКИ ДЛЯ МОБИЛЬНЫХ
+   Крупные шрифты и удобное меню
+   ============================================ */
+
+/* Планшеты (768-1024px) */
+@media (min-width: 768px) and (max-width: 1024px) {
+    .header {
+        padding: 14px 0 !important;
+    }
+    
+    .logo__title {
+        font-size: 22px !important;
+    }
+    
+    .nav__list.active {
+        padding: 30px 25px !important;
+        gap: 18px !important;
+    }
+    
+    .nav__list.active .nav__link {
+        font-size: 20px !important;
+        padding: 14px !important;
+    }
+    
+    .burger-menu span {
+        width: 32px !important;
+        height: 4px !important;
+    }
+    
+    .favorites-link {
+        font-size: 26px !important;
+    }
+}
+
+/* Мобильные (до 767px) — крупные шрифты */
+@media (max-width: 767px) {
+    .header {
+        padding: 12px 0 !important;
+    }
+    
+    .logo__title {
+        font-size: 20px !important;
+        line-height: 1.3 !important;
+    }
+    
+    .burger-menu {
+        padding: 14px !important;
+        right: 15px !important;
+    }
+    
+    .burger-menu span {
+        width: 28px !important;
+        height: 3.5px !important;
+    }
+    
+    .nav__list.active {
+        padding: 25px 20px !important;
+        gap: 12px !important;
+    }
+    
+    .nav__list.active .nav__link {
+        font-size: 20px !important;
+        padding: 14px 10px !important;
+        border-bottom: 1px solid rgba(255,255,255,0.1);
+    }
+    
+    .nav__list.active .nav__item:last-child .nav__link {
+        border-bottom: none;
+    }
+    
+    .favorites-link {
+        font-size: 24px !important;
+    }
+    
+    .favorites-count {
+        min-width: 20px !important;
+        height: 20px !important;
+        font-size: 12px !important;
+    }
+}
+
+/* Очень маленькие экраны (до 380px) */
+@media (max-width: 380px) {
+    .logo__title {
+        font-size: 18px !important;
+    }
+    
+    .nav__list.active .nav__link {
+        font-size: 18px !important;
+    }
+}
+

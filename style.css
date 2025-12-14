@@ -81,6 +81,90 @@
   }
 }
 
+/* ============================================
+   ДОПОЛНИТЕЛЬНЫЕ АНИМАЦИИ ДЛЯ КРАСОТЫ
+   ============================================ */
+
+/* Плавное появление с задержкой (stagger) */
+@keyframes staggerFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Свечение */
+@keyframes glow {
+  0%, 100% {
+    box-shadow: 0 0 5px rgba(75, 153, 178, 0.3);
+  }
+  50% {
+    box-shadow: 0 0 20px rgba(75, 153, 178, 0.6), 0 0 30px rgba(106, 219, 144, 0.4);
+  }
+}
+
+/* Плавание */
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+/* Shimmer эффект */
+@keyframes shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+/* Bounce */
+@keyframes bounce {
+  0%, 20%, 50%, 80%, 100% {
+    transform: translateY(0);
+  }
+  40% {
+    transform: translateY(-15px);
+  }
+  60% {
+    transform: translateY(-7px);
+  }
+}
+
+/* Rotate in */
+@keyframes rotateIn {
+  from {
+    opacity: 0;
+    transform: rotate(-10deg) scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: rotate(0) scale(1);
+  }
+}
+
+/* Градиентный текст анимация */
+@keyframes gradientText {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
 /* Шрифты согласно ТЗ: Merriweather для заголовков, Open Sans для текста */
 html, body {
   margin: 0;
@@ -177,17 +261,38 @@ body {
     display: inline-block;
     margin-top: 30px;
     padding: 15px 30px;
-    background: linear-gradient(180deg, #4B99B2, #6ADB90);
+    background: linear-gradient(135deg, #4B99B2, #6ADB90);
     border-radius: 30px;
     color: white;
     text-decoration: none;
-    font-weight: 500;
-    font-family: "Rubik", bold;
+    font-weight: 600;
+    font-family: "Rubik", sans-serif;
     font-size: 16px;
-    transition: all 0.3s ease;
-    animation: fadeInUp 1.4s ease-out;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    animation: fadeInUp 1.4s ease-out, glow 3s ease-in-out infinite 2s;
     position: relative;
     overflow: hidden;
+    box-shadow: 0 8px 25px rgba(75, 153, 178, 0.4);
+  }
+
+  .hero__button::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+    transition: left 0.6s ease;
+  }
+
+  .hero__button:hover::before {
+    left: 100%;
+  }
+
+  .hero__button:hover {
+    transform: translateY(-4px) scale(1.05);
+    box-shadow: 0 15px 40px rgba(75, 153, 178, 0.5), 0 0 30px rgba(106, 219, 144, 0.3);
   }
 
   .hero__button::before {
@@ -247,6 +352,7 @@ body {
     letter-spacing: 0.02em;
     word-wrap: break-word;
     white-space: normal;
+    animation: slideInLeft 0.8s ease-out;
   }
   
   .attractions__all {
@@ -276,12 +382,20 @@ body {
     background-size: cover;
     background-position: center;
     transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-    animation: fadeIn 0.8s ease-out;
+    animation: staggerFadeIn 0.8s ease-out backwards;
   }
 
+  /* Stagger эффект для карточек — каждая появляется с задержкой */
+  .attraction-card:nth-child(1) { animation-delay: 0.1s; }
+  .attraction-card:nth-child(2) { animation-delay: 0.2s; }
+  .attraction-card:nth-child(3) { animation-delay: 0.3s; }
+  .attraction-card:nth-child(4) { animation-delay: 0.4s; }
+  .attraction-card:nth-child(5) { animation-delay: 0.5s; }
+  .attraction-card:nth-child(6) { animation-delay: 0.6s; }
+
   .attraction-card:hover {
-    transform: translateY(-10px) scale(1.02);
-    box-shadow: 0 25px 50px rgba(0,0,0,0.3);
+    transform: translateY(-12px) scale(1.03);
+    box-shadow: 0 30px 60px rgba(0,0,0,0.35), 0 0 30px rgba(75, 153, 178, 0.2);
   }
   
 .card-yagorlyk { background-image: url('assets/images/yagorlyk.jpg'); }
@@ -386,6 +500,7 @@ body {
     font-size: 40px;
     color: #2D5016;
     letter-spacing: 0.02em;
+    animation: slideInLeft 0.8s ease-out;
   }
   
   .routes__all {
@@ -415,12 +530,20 @@ body {
     background-size: cover;
     background-position: center;
     transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-    animation: fadeIn 0.8s ease-out;
+    animation: staggerFadeIn 0.8s ease-out backwards;
   }
 
+  /* Stagger эффект для маршрутов */
+  .routes-card:nth-child(1) { animation-delay: 0.15s; }
+  .routes-card:nth-child(2) { animation-delay: 0.25s; }
+  .routes-card:nth-child(3) { animation-delay: 0.35s; }
+  .routes-card:nth-child(4) { animation-delay: 0.45s; }
+  .routes-card:nth-child(5) { animation-delay: 0.55s; }
+  .routes-card:nth-child(6) { animation-delay: 0.65s; }
+
   .routes-card:hover {
-    transform: translateY(-10px) scale(1.02);
-    box-shadow: 0 25px 50px rgba(0,0,0,0.3);
+    transform: translateY(-12px) scale(1.03);
+    box-shadow: 0 30px 60px rgba(0,0,0,0.35), 0 0 30px rgba(106, 219, 144, 0.2);
   }
   
   .card-kamenka { background-image: url('assets/images/wittgenstein.jpg'); }
@@ -573,6 +696,7 @@ body {
   font-size: 40px;
   color: #2D5016;
   letter-spacing: 0.02em;
+  animation: slideInLeft 0.8s ease-out;
 }
 
 .tips__all {
@@ -725,6 +849,7 @@ body {
   font-size: 40px;
   color: #2D5016;
   letter-spacing: 0.02em;
+  animation: slideInLeft 0.8s ease-out;
 } 
 
 /* Основной контент */
@@ -829,6 +954,7 @@ body {
   font-size: 40px;
   color: #2D5016;
   letter-spacing: 0.02em;
+  animation: slideInLeft 0.8s ease-out;
 } 
 .contact {
   padding-top: 100px;
@@ -1788,12 +1914,23 @@ body {
   padding: 30px;
   border-radius: 12px;
   box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  animation: staggerFadeIn 0.6s ease-out backwards;
+  border: 1px solid transparent;
 }
 
+/* Stagger для советов */
+.tip-item:nth-child(1) { animation-delay: 0.1s; }
+.tip-item:nth-child(2) { animation-delay: 0.15s; }
+.tip-item:nth-child(3) { animation-delay: 0.2s; }
+.tip-item:nth-child(4) { animation-delay: 0.25s; }
+.tip-item:nth-child(5) { animation-delay: 0.3s; }
+.tip-item:nth-child(6) { animation-delay: 0.35s; }
+
 .tip-item:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+  transform: translateY(-8px) scale(1.02);
+  box-shadow: 0 15px 35px rgba(0,0,0,0.18);
+  border-color: rgba(75, 153, 178, 0.3);
 }
 
 .tip-item i {
@@ -1801,6 +1938,12 @@ body {
   color: #4B99B2;
   margin-bottom: 15px;
   display: block;
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.tip-item:hover i {
+  transform: scale(1.15) rotate(5deg);
+  color: #6ADB90;
 }
 
 .tip-item h3 {
@@ -1832,12 +1975,22 @@ body {
   display: flex;
   align-items: flex-start;
   gap: 20px;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  animation: slideInLeft 0.6s ease-out backwards;
+  border-left: 4px solid transparent;
 }
 
+/* Stagger для правил */
+.rule-item:nth-child(1) { animation-delay: 0.1s; }
+.rule-item:nth-child(2) { animation-delay: 0.2s; }
+.rule-item:nth-child(3) { animation-delay: 0.3s; }
+.rule-item:nth-child(4) { animation-delay: 0.4s; }
+.rule-item:nth-child(5) { animation-delay: 0.5s; }
+
 .rule-item:hover {
-  transform: translateX(5px);
-  box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+  transform: translateX(10px);
+  box-shadow: 0 12px 30px rgba(0,0,0,0.18);
+  border-left-color: #4B99B2;
 }
 
 .rule-item i {
@@ -1845,6 +1998,12 @@ body {
   color: #4B99B2;
   flex-shrink: 0;
   margin-top: 5px;
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.rule-item:hover i {
+  transform: scale(1.2);
+  color: #6ADB90;
 }
 
 .rule-item h3 {
@@ -2526,14 +2685,1183 @@ body {
         margin: 0 auto !important;
     }
     
-    /* === КНОПКА НАВЕРХ БОЛЬШЕ === */
-    .scroll-to-top,
-    #scrollToTop,
-    .back-to-top {
+    /* === КНОПКА НАВЕРХ — стили в конце файла === */
+    
+    /* === СОВЕТЫ ПУТЕШЕСТВЕННИКАМ — КАК НА СТРАНИЦЕ TIPS === */
+    
+    /* Скрыть картинку */
+    .tips__large__page {
+        display: none !important;
+    }
+    
+    /* Секция советов */
+    .tips {
+        padding-left: 20px !important;
+        padding-right: 20px !important;
+        box-sizing: border-box !important;
+    }
+    
+    .tips__content {
+        width: 100% !important;
+        padding: 0 !important;
+        margin: 0 !important;
+    }
+    
+    /* Контейнеры карточек — сетка 2 колонки */
+    .tips__top {
+        display: grid !important;
+        grid-template-columns: repeat(2, 1fr) !important;
+        gap: 15px !important;
+        width: 100% !important;
+        padding: 0 !important;
+        margin: 0 0 15px 0 !important;
+        box-sizing: border-box !important;
+    }
+    
+    .tips__bottom {
+        display: flex !important;
+        flex-direction: column !important;
+        gap: 15px !important;
+        width: 100% !important;
+        padding: 0 !important;
+        margin: 0 !important;
+        box-sizing: border-box !important;
+    }
+    
+    /* Карточки — 100% ширины */
+    .tip-card,
+    .tip-card--small,
+    .tip-card--large {
+        width: 100% !important;
+        max-width: 100% !important;
+        height: auto !important;
+        min-height: auto !important;
+        padding: 20px !important;
+        margin: 0 !important;
+        box-sizing: border-box !important;
+    }
+    
+    .tip-card__title {
+        font-size: 20px !important;
+        margin-bottom: 15px !important;
+        text-align: left !important;
+    }
+    
+    .tip-card__text {
+        font-size: 15px !important;
+        line-height: 1.7 !important;
+    }
+    
+    .tip-card__header {
+        justify-content: flex-start !important;
+    }
+    
+    .tips_page {
+        width: 24px !important;
+        height: 24px !important;
+    }
+}
+
+/* === МОБИЛЬНЫЕ (до 767px) — СОВЕТЫ 1 КАРТОЧКА В РЯД === */
+@media (max-width: 767px) {
+    .tips__top {
+        grid-template-columns: 1fr !important;
+    }
+}
+
+/* ============================================
+   ПРОМЕЖУТОЧНАЯ АДАПТАЦИЯ (1025-1279px)
+   Между планшетом и десктопом
+   ============================================ */
+@media (min-width: 1025px) and (max-width: 1279px) {
+    
+    /* === HERO === */
+    .hero {
+        padding: 100px 40px 80px !important;
+    }
+    
+    .hero__content {
+        margin-left: 40px !important;
+    }
+    
+    .hero__line--top {
+        font-size: 80px !important;
+    }
+    
+    .hero__line--middle {
+        font-size: 54px !important;
+        margin-left: 500px !important;
+    }
+    
+    .hero__line--bottom {
+        font-size: 80px !important;
+    }
+    
+    /* === КАРТОЧКИ — 3 В РЯД, УВЕЛИЧЕННЫЕ === */
+    .attractions__grid,
+    .routes__grid {
+        grid-template-columns: repeat(3, 1fr) !important;
+        gap: 25px !important;
+        padding: 0 25px !important;
+    }
+    
+    .attraction-card,
+    .routes-card {
+        width: 100% !important;
+        height: 580px !important;
+    }
+    
+    /* Заголовки */
+    .attraction-card__name {
+        font-size: 16px !important;
+        top: 220px !important;
+        line-height: 1.35 !important;
+        left: 25px !important;
+        right: 25px !important;
+    }
+    
+    .routes-card__name {
+        font-size: 16px !important;
+        top: 220px !important;
+        line-height: 1.35 !important;
+        left: 25px !important;
+        right: 25px !important;
+    }
+    
+    /* Описания — БОЛЬШОЙ ОТСТУП */
+    .attraction-card__desc {
+        top: 310px !important;
+        font-size: 13px !important;
+        line-height: 1.6 !important;
+        max-height: 170px !important;
+        left: 25px !important;
+        right: 25px !important;
+    }
+    
+    .routes-card__desc {
+        top: 370px !important;
+        font-size: 13px !important;
+        line-height: 1.6 !important;
+        max-height: 110px !important;
+        left: 25px !important;
+        right: 25px !important;
+    }
+    
+    .routes-card__info {
+        top: 260px !important;
+        left: 25px !important;
+    }
+    
+    .routes-card__info-item {
+        font-size: 12px !important;
+    }
+    
+    .attraction-card__btn,
+    .routes-card__btn {
+        bottom: 25px !important;
+        font-size: 13px !important;
+        padding: 11px 22px !important;
+        left: 25px !important;
+    }
+}
+
+/* ============================================
+   УЛУЧШЕННАЯ АДАПТАЦИЯ ДЛЯ ПЛАНШЕТОВ (768-1024px)
+   Большие шрифты, читабельный текст, высокие карточки
+   ============================================ */
+@media (min-width: 768px) and (max-width: 1024px) {
+    
+    /* === HERO СЕКЦИЯ === */
+    .hero {
+        padding: 120px 30px 80px !important;
+        min-height: 100vh !important;
+    }
+    
+    .hero__content {
+        text-align: center !important;
+        margin: 0 auto !important;
+        padding: 0 20px !important;
+    }
+    
+    .hero__line--top {
+        font-size: 72px !important;
+        margin-bottom: -15px !important;
+    }
+    
+    .hero__line--middle {
+        font-size: 56px !important;
+        margin: 0 auto !important;
+    }
+    
+    .hero__line--bottom {
+        font-size: 72px !important;
+        -webkit-text-stroke: 2.5px #ffffff !important;
+    }
+    
+    .hero__button {
+        font-size: 20px !important;
+        padding: 18px 40px !important;
+        margin-top: 40px !important;
+    }
+    
+    /* === ЗАГОЛОВКИ СЕКЦИЙ === */
+    .attractions__title,
+    .routes__title,
+    .tips__title,
+    .about__title,
+    .contact__title {
+        font-size: 36px !important;
+        line-height: 1.3 !important;
+    }
+    
+    /* === HEADER СЕКЦИЙ === */
+    .attractions__header-outer,
+    .routes__header-outer,
+    .tips__header-outer,
+    .about__header-outer,
+    .contact__header-outer {
+        margin-left: 0 !important;
+        padding: 15px 25px !important;
+    }
+    
+    .attractions__header,
+    .routes__header,
+    .tips__header,
+    .about__header,
+    .contact__header {
+        padding: 10px 0 !important;
+        height: auto !important;
+        flex-wrap: wrap !important;
+        gap: 10px !important;
+    }
+    
+    .attractions__all,
+    .routes__all {
+        font-size: 18px !important;
+    }
+    
+    /* === КАРТОЧКИ — 2 В РЯД, ВЫСОКИЕ ДЛЯ ПОЛНОГО ТЕКСТА === */
+    .attractions__grid,
+    .routes__grid {
+        grid-template-columns: repeat(2, 1fr) !important;
+        gap: 25px !important;
+        padding: 0 25px !important;
+    }
+    
+    .attraction-card {
+        width: 100% !important;
+        height: 620px !important;
+    }
+    
+    .routes-card {
+        width: 100% !important;
+        height: 650px !important;
+    }
+    
+    /* Заголовок — планшет */
+    .attraction-card__name {
+        font-size: 18px !important;
+        top: 200px !important;
+        left: 20px !important;
+        right: 20px !important;
+        line-height: 1.35 !important;
+    }
+    
+    .routes-card__name {
+        font-size: 18px !important;
+        top: 200px !important;
+        left: 20px !important;
+        right: 20px !important;
+        line-height: 1.35 !important;
+    }
+    
+    /* Описание — БОЛЬШОЙ ОТСТУП от заголовка */
+    .attraction-card__desc {
+        font-size: 14px !important;
+        line-height: 1.65 !important;
+        top: 300px !important;
+        bottom: auto !important;
+        left: 20px !important;
+        right: 20px !important;
+        max-height: 200px !important;
+        overflow: hidden !important;
+    }
+    
+    .routes-card__desc {
+        font-size: 14px !important;
+        line-height: 1.65 !important;
+        top: 370px !important;
+        bottom: auto !important;
+        left: 20px !important;
+        right: 20px !important;
+        max-height: 150px !important;
+        overflow: hidden !important;
+    }
+    
+    .routes-card__info {
+        top: 250px !important;
+        left: 20px !important;
+    }
+    
+    .routes-card__info-item {
+        font-size: 14px !important;
+        margin-bottom: 3px !important;
+    }
+    
+    .attraction-card__btn,
+    .routes-card__btn {
+        font-size: 14px !important;
+        padding: 12px 26px !important;
+        left: 20px !important;
+        bottom: 25px !important;
+    }
+    
+    .routes-card__quick {
+        font-size: 14px !important;
+        padding: 10px 18px !important;
+    }
+    
+    .favorite-btn-route,
+    .favorite-btn-attraction {
+        width: 48px !important;
+        height: 48px !important;
+    }
+    
+    .favorite-btn-route i,
+    .favorite-btn-attraction i {
+        font-size: 22px !important;
+    }
+    
+    /* === СЕКЦИЯ СОВЕТОВ === */
+    .tips__content {
+        grid-template-columns: 1fr !important;
+        padding: 0 30px !important;
+    }
+    
+    .tips__top {
+        display: grid !important;
+        grid-template-columns: repeat(3, 1fr) !important;
+        gap: 25px !important;
+    }
+    
+    .tip-card--small {
+        width: 100% !important;
+        height: auto !important;
+        min-height: 300px !important;
+        padding: 25px !important;
+    }
+    
+    .tip-card--large {
+        width: 100% !important;
+        height: auto !important;
+        min-height: 180px !important;
+        padding: 30px !important;
+    }
+    
+    .tip-card__title {
+        font-size: 20px !important;
+        margin-bottom: 18px !important;
+    }
+    
+    .tip-card__text {
+        font-size: 17px !important;
+        line-height: 1.8 !important;
+    }
+    
+    /* === СЕКЦИЯ О НАС === */
+    .about__content {
+        flex-direction: column !important;
+        height: auto !important;
+        padding: 40px 30px !important;
+        gap: 40px !important;
+    }
+    
+    .about__bg {
+        position: static !important;
+        width: 100% !important;
+        max-width: 700px !important;
+        height: 400px !important;
+        border-radius: 20px !important;
+    }
+    
+    .about__card {
+        position: static !important;
+        width: 100% !important;
+        max-width: 700px !important;
+        padding: 40px !important;
+    }
+    
+    .about__card-title {
+        font-size: 28px !important;
+    }
+    
+    .about__text {
+        font-size: 18px !important;
+        line-height: 1.8 !important;
+    }
+    
+    /* === СЕКЦИЯ КОНТАКТОВ === */
+    .contact__content {
+        padding: 0 30px !important;
+    }
+    
+    .contact__text--main,
+    .contact__text--secondary {
+        font-size: 18px !important;
+        line-height: 1.8 !important;
+    }
+    
+    .contact__blocks {
+        flex-direction: column !important;
+        align-items: center !important;
+        gap: 40px !important;
+    }
+    
+    .contact__form-block {
+        width: 100% !important;
+        max-width: 650px !important;
+        height: auto !important;
+        padding: 45px !important;
+    }
+    
+    .contact__form-title {
+        font-size: 26px !important;
+    }
+    
+    .contact__input,
+    .contact__textarea {
+        width: 100% !important;
+        font-size: 16px !important;
+        height: 48px !important;
+        padding: 14px 18px !important;
+    }
+    
+    .contact__textarea {
+        height: 140px !important;
+    }
+    
+    .contact-card__btn {
+        font-size: 18px !important;
+        width: 200px !important;
+        height: 50px !important;
+    }
+    
+    .contact__info-block {
+        width: 100% !important;
+        max-width: 500px !important;
+        height: auto !important;
+        padding: 40px !important;
+        position: relative !important;
+        margin: 0 !important;
+    }
+    
+    .contact__info-title {
+        position: static !important;
+        font-size: 26px !important;
+        margin-bottom: 30px !important;
+        text-align: center !important;
+    }
+    
+    .contact__info-phone,
+    .contact__info-email {
+        position: static !important;
+        font-size: 18px !important;
+        margin-bottom: 15px !important;
+        text-align: center !important;
+    }
+}
+
+/* ============================================
+   УЛУЧШЕННАЯ АДАПТАЦИЯ ДЛЯ ТЕЛЕФОНОВ (до 767px)
+   Максимальная читабельность, крупные шрифты
+   ============================================ */
+@media (max-width: 767px) {
+    
+    /* === HERO СЕКЦИЯ — КРУПНЫЙ ЧИТАБЕЛЬНЫЙ ТЕКСТ === */
+    .hero {
+        padding: 100px 15px 60px !important;
+        min-height: 100vh !important;
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+    }
+    
+    .hero__content {
+        text-align: center !important;
+        margin: 0 auto !important;
+        padding: 0 10px !important;
+        width: 100% !important;
+    }
+    
+    .hero__title {
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important;
+        gap: 5px !important;
+    }
+    
+    .hero__line--top {
+        font-size: 44px !important;
+        letter-spacing: -1px !important;
+        margin-bottom: 0 !important;
+        text-shadow: 0 4px 15px rgba(0,0,0,0.5) !important;
+    }
+    
+    .hero__line--middle {
+        font-size: 36px !important;
+        margin: 5px auto !important;
+        text-shadow: 0 4px 15px rgba(0,0,0,0.4) !important;
+    }
+    
+    .hero__line--bottom {
+        font-size: 38px !important;
+        -webkit-text-stroke: 2px #ffffff !important;
+        letter-spacing: -0.5px !important;
+    }
+    
+    .hero__button {
+        font-size: 18px !important;
+        padding: 16px 35px !important;
+        margin-top: 35px !important;
+        display: inline-block !important;
+    }
+    
+    /* === ЗАГОЛОВКИ СЕКЦИЙ — КРУПНЫЕ === */
+    .attractions__title,
+    .routes__title,
+    .tips__title,
+    .about__title,
+    .contact__title {
+        font-size: 28px !important;
+        line-height: 1.3 !important;
+        padding: 0 !important;
+    }
+    
+    /* === HEADER СЕКЦИЙ === */
+    .attractions__header-outer,
+    .routes__header-outer,
+    .tips__header-outer,
+    .about__header-outer,
+    .contact__header-outer {
+        margin-left: 0 !important;
+        padding: 15px 20px !important;
+    }
+    
+    .attractions__header,
+    .routes__header,
+    .tips__header,
+    .about__header,
+    .contact__header {
+        padding: 10px 0 !important;
+        height: auto !important;
+        flex-direction: column !important;
+        align-items: flex-start !important;
+        gap: 12px !important;
+    }
+    
+    .attractions__all,
+    .routes__all {
+        font-size: 16px !important;
+    }
+    
+    /* === КАРТОЧКИ — ОДНА В РЯД, ВЫСОКИЕ ДЛЯ ПОЛНОГО ТЕКСТА === */
+    .attractions__grid,
+    .routes__grid {
+        grid-template-columns: 1fr !important;
+        gap: 30px !important;
+        padding: 0 20px !important;
+    }
+    
+    .attraction-card {
+        width: 100% !important;
+        max-width: 100% !important;
+        height: 600px !important;
+        margin: 0 auto !important;
+    }
+    
+    .routes-card {
+        width: 100% !important;
+        max-width: 100% !important;
+        height: 650px !important;
+        margin: 0 auto !important;
+    }
+    
+    .attraction-card__content,
+    .routes-card__content {
+        padding: 0 25px !important;
+    }
+    
+    /* Заголовок достопримечательности */
+    .attraction-card__name {
+        font-size: 20px !important;
+        top: 180px !important;
+        left: 25px !important;
+        right: 25px !important;
+        line-height: 1.4 !important;
+    }
+    
+    /* Заголовок маршрута */
+    .routes-card__name {
+        font-size: 20px !important;
+        top: 180px !important;
+        left: 25px !important;
+        right: 25px !important;
+        line-height: 1.4 !important;
+    }
+    
+    /* Описание достопримечательности — БОЛЬШОЙ ОТСТУП от заголовка */
+    .attraction-card__desc {
+        font-size: 16px !important;
+        line-height: 1.7 !important;
+        top: 300px !important;
+        bottom: auto !important;
+        left: 25px !important;
+        right: 25px !important;
+        max-height: 180px !important;
+        overflow: hidden !important;
+    }
+    
+    /* Описание маршрута — после info блока */
+    .routes-card__desc {
+        font-size: 16px !important;
+        line-height: 1.7 !important;
+        top: 380px !important;
+        bottom: auto !important;
+        left: 25px !important;
+        right: 25px !important;
+        max-height: 150px !important;
+        overflow: hidden !important;
+    }
+    
+    .routes-card__info {
+        top: 230px !important;
+        left: 25px !important;
+    }
+    
+    .routes-card__info-item {
+        font-size: 15px !important;
+        gap: 8px !important;
+        margin-bottom: 5px !important;
+    }
+    
+    .attraction-card__btn,
+    .routes-card__btn {
+        font-size: 16px !important;
+        padding: 14px 30px !important;
+        left: 25px !important;
+        bottom: 25px !important;
+    }
+    
+    .routes-card__quick {
+        font-size: 14px !important;
+        padding: 12px 18px !important;
+        top: 15px !important;
+        right: 15px !important;
+    }
+    
+    .favorite-btn-route,
+    .favorite-btn-attraction {
+        top: 15px !important;
+        left: 15px !important;
         width: 50px !important;
         height: 50px !important;
+    }
+    
+    .favorite-btn-route i,
+    .favorite-btn-attraction i {
+        font-size: 22px !important;
+    }
+    
+    /* === СОВЕТЫ — КРУПНЫЙ ТЕКСТ === */
+    .tips {
+        padding: 60px 15px !important;
+    }
+    
+    .tips__content {
+        grid-template-columns: 1fr !important;
+        padding: 0 !important;
+    }
+    
+    .tips__top {
+        grid-template-columns: 1fr !important;
+        gap: 20px !important;
+    }
+    
+    .tips__bottom {
+        gap: 20px !important;
+    }
+    
+    .tip-card--small,
+    .tip-card--large {
+        width: 100% !important;
+        height: auto !important;
+        min-height: auto !important;
+        padding: 25px !important;
+    }
+    
+    .tip-card__title {
+        font-size: 22px !important;
+        margin-bottom: 15px !important;
+        text-align: left !important;
+    }
+    
+    .tip-card__text {
+        font-size: 17px !important;
+        line-height: 1.8 !important;
+    }
+    
+    .tip-card__header {
+        justify-content: flex-start !important;
+        margin-bottom: 10px !important;
+    }
+    
+    .tips_page {
+        width: 28px !important;
+        height: 28px !important;
+    }
+    
+    /* === О НАС — ЧИТАБЕЛЬНЫЙ ТЕКСТ === */
+    .about {
+        padding: 60px 15px !important;
+    }
+    
+    .about__content {
+        flex-direction: column !important;
+        height: auto !important;
+        padding: 0 !important;
+        gap: 30px !important;
+    }
+    
+    .about__bg {
+        position: static !important;
+        width: 100% !important;
+        height: 280px !important;
+        border-radius: 16px !important;
+        object-fit: cover !important;
+    }
+    
+    .about__card {
+        position: static !important;
+        width: 100% !important;
+        padding: 30px 25px !important;
+        border-radius: 16px !important;
+    }
+    
+    .about__card-header {
+        justify-content: flex-start !important;
+        margin-bottom: 15px !important;
+    }
+    
+    .about__card-title {
+        font-size: 26px !important;
+    }
+    
+    .about__icon {
+        width: 22px !important;
+        height: 26px !important;
+    }
+    
+    .about__text {
+        font-size: 17px !important;
+        line-height: 1.8 !important;
+    }
+    
+    .about__text p {
+        margin-bottom: 15px !important;
+    }
+    
+    .text__blue {
+        font-size: 18px !important;
+    }
+    
+    /* === КОНТАКТЫ — КРУПНЫЕ ФОРМЫ И ТЕКСТ === */
+    .contact {
+        padding: 60px 15px !important;
+    }
+    
+    .contact__content {
+        padding: 0 !important;
+    }
+    
+    .contact__intro {
+        margin-bottom: 30px !important;
+    }
+    
+    .contact__text--main {
+        font-size: 17px !important;
+        line-height: 1.8 !important;
+        margin-bottom: 15px !important;
+    }
+    
+    .contact__text--secondary {
+        font-size: 17px !important;
+        line-height: 1.8 !important;
+        margin-top: 0 !important;
+    }
+    
+    .contact__blocks {
+        flex-direction: column !important;
+        gap: 30px !important;
+        margin-top: 30px !important;
+    }
+    
+    .contact__form-block {
+        width: 100% !important;
+        height: auto !important;
+        padding: 30px 25px !important;
+        border-radius: 20px !important;
+    }
+    
+    .contact__form-title {
+        font-size: 24px !important;
+        margin-bottom: 25px !important;
+    }
+    
+    .contact__input,
+    .contact__textarea {
+        width: 100% !important;
+        font-size: 17px !important;
+        height: 52px !important;
+        padding: 15px 18px !important;
+        margin-bottom: 18px !important;
+        border-radius: 10px !important;
+    }
+    
+    .contact__textarea {
+        height: 130px !important;
+    }
+    
+    .contact-card__btn {
+        font-size: 18px !important;
+        width: 100% !important;
+        max-width: 220px !important;
+        height: 52px !important;
+        margin: 15px auto 0 !important;
+        display: flex !important;
+    }
+    
+    .contact__info-block {
+        width: 100% !important;
+        height: auto !important;
+        padding: 35px 25px !important;
+        border-radius: 20px !important;
+        margin: 0 !important;
+    }
+    
+    .contact__info-title {
+        position: static !important;
+        font-size: 24px !important;
+        margin-bottom: 25px !important;
+        text-align: center !important;
+    }
+    
+    .contact__info-phone,
+    .contact__info-email {
+        position: static !important;
+        font-size: 17px !important;
+        margin-bottom: 15px !important;
+        text-align: center !important;
+    }
+    
+    .contact__info-phone strong,
+    .contact__info-email strong {
+        font-size: 18px !important;
+        display: block !important;
+        margin-top: 5px !important;
+    }
+    
+    /* === МОДАЛЬНЫЕ ОКНА — КРУПНЫЙ ТЕКСТ === */
+    .modal__content {
+        width: 95% !important;
+        max-height: 90vh !important;
+        border-radius: 20px !important;
+    }
+    
+    .modal__body {
+        padding: 30px 25px !important;
+    }
+    
+    .modal__title {
+        font-size: 24px !important;
+        margin-bottom: 25px !important;
+        line-height: 1.4 !important;
+    }
+    
+    .modal__text {
+        font-size: 17px !important;
+        line-height: 1.8 !important;
+    }
+    
+    .modal__info {
+        gap: 15px !important;
+    }
+    
+    .modal__info-item {
+        font-size: 15px !important;
+    }
+    
+    .modal__close {
+        width: 45px !important;
+        height: 45px !important;
+        font-size: 32px !important;
+        right: 15px !important;
+        top: 15px !important;
+    }
+}
+
+/* ============================================
+   ОЧЕНЬ МАЛЕНЬКИЕ ЭКРАНЫ (до 380px)
+   iPhone SE и подобные
+   ============================================ */
+@media (max-width: 380px) {
+    
+    .hero__line--top {
+        font-size: 36px !important;
+    }
+    
+    .hero__line--middle {
+        font-size: 30px !important;
+    }
+    
+    .hero__line--bottom {
+        font-size: 32px !important;
+    }
+    
+    .hero__button {
+        font-size: 16px !important;
+        padding: 14px 28px !important;
+    }
+    
+    .attractions__title,
+    .routes__title,
+    .tips__title,
+    .about__title,
+    .contact__title {
+        font-size: 24px !important;
+    }
+    
+    /* Карточки — достаточная высота для текста */
+    .attraction-card {
+        height: 580px !important;
+    }
+    
+    .routes-card {
+        height: 620px !important;
+    }
+    
+    /* Заголовки */
+    .attraction-card__name {
+        font-size: 18px !important;
+        top: 170px !important;
+        line-height: 1.35 !important;
+    }
+    
+    .routes-card__name {
+        font-size: 18px !important;
+        top: 170px !important;
+        line-height: 1.35 !important;
+    }
+    
+    /* Описания — БОЛЬШОЙ ОТСТУП */
+    .attraction-card__desc {
+        font-size: 15px !important;
+        top: 280px !important;
+        line-height: 1.7 !important;
+        max-height: 190px !important;
+    }
+    
+    .routes-card__desc {
+        font-size: 15px !important;
+        top: 360px !important;
+        line-height: 1.7 !important;
+        max-height: 160px !important;
+    }
+    
+    .routes-card__info {
+        top: 220px !important;
+    }
+    
+    .routes-card__info-item {
+        font-size: 14px !important;
+    }
+    
+    .routes-card__info {
+        top: 190px !important;
+    }
+    
+    .routes-card__info-item {
+        font-size: 15px !important;
+    }
+    
+    .attraction-card__btn,
+    .routes-card__btn {
+        font-size: 16px !important;
+        padding: 14px 30px !important;
+    }
+    
+    .tip-card__title {
         font-size: 20px !important;
-        bottom: 25px !important;
-        right: 25px !important;
+    }
+    
+    .tip-card__text {
+        font-size: 16px !important;
+    }
+    
+    .about__card-title {
+        font-size: 24px !important;
+    }
+    
+    .about__text {
+        font-size: 16px !important;
+    }
+    
+    .contact__form-title,
+    .contact__info-title {
+        font-size: 22px !important;
+    }
+    
+    .contact__input,
+    .contact__textarea {
+        font-size: 16px !important;
+    }
+}
+
+/* ============================================
+   ПРОМЕЖУТОЧНЫЕ РАЗМЕРЫ (481-767px)
+   Большие телефоны в ландшафтной ориентации
+   ============================================ */
+@media (min-width: 481px) and (max-width: 767px) {
+    
+    .attraction-card,
+    .routes-card {
+        max-width: 450px !important;
+    }
+    
+    .attraction-card__name,
+    .routes-card__name {
+        font-size: 26px !important;
+    }
+    
+    .attraction-card__desc,
+    .routes-card__desc {
+        font-size: 18px !important;
+    }
+}
+
+/* ============================================
+   КНОПКА "НАВЕРХ" — ПЛАВНОЕ УВЕЛИЧЕНИЕ
+   Чем меньше экран, тем больше кнопка
+   ============================================ */
+
+/* Базовые стили кнопки */
+.back-to-top-btn {
+    position: fixed !important;
+    right: 20px !important;
+    bottom: 24px !important;
+    width: 44px !important;
+    height: 44px !important;
+    background: linear-gradient(135deg, #6adb90, #4B99B2) !important;
+    color: #ffffff !important;
+    border: none !important;
+    border-radius: 50% !important;
+    box-shadow: 0 6px 20px rgba(106, 219, 144, 0.4) !important;
+    cursor: pointer !important;
+    font-size: 20px !important;
+    font-weight: 700 !important;
+    font-family: 'Rubik', sans-serif !important;
+    z-index: 9999 !important;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1) !important;
+    opacity: 0 !important;
+    visibility: hidden !important;
+    transform: translateY(20px) scale(0.8) !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+}
+
+/* Видимая кнопка */
+.back-to-top-btn.visible {
+    opacity: 1 !important;
+    visibility: visible !important;
+    transform: translateY(0) scale(1) !important;
+}
+
+.back-to-top-btn:hover {
+    transform: translateY(-4px) scale(1.1) !important;
+    box-shadow: 0 12px 30px rgba(106, 219, 144, 0.5) !important;
+}
+
+.back-to-top-btn:active {
+    transform: translateY(0) scale(0.95) !important;
+}
+
+/* ============================================
+   АНИМАЦИЯ ПОЯВЛЕНИЯ ПРИ СКРОЛЛЕ
+   ============================================ */
+.animate-on-scroll {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.animate-on-scroll.animate-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Промежуточная адаптация (1025-1279px) */
+@media (max-width: 1279px) {
+    .back-to-top-btn {
+        width: 50px !important;
+        height: 50px !important;
+        font-size: 22px !important;
+        right: 22px !important;
+        bottom: 26px !important;
+    }
+}
+
+/* Планшеты (768-1024px) */
+@media (max-width: 1024px) {
+    .back-to-top-btn {
+        width: 56px !important;
+        height: 56px !important;
+        font-size: 24px !important;
+        right: 24px !important;
+        bottom: 28px !important;
+        box-shadow: 0 8px 24px rgba(106, 219, 144, 0.45) !important;
+    }
+}
+
+/* Мобильные (до 767px) */
+@media (max-width: 767px) {
+    .back-to-top-btn {
+        width: 60px !important;
+        height: 60px !important;
+        font-size: 26px !important;
+        right: 18px !important;
+        bottom: 20px !important;
+        box-shadow: 0 8px 28px rgba(106, 219, 144, 0.5) !important;
+    }
+}
+
+/* Маленькие мобильные (до 480px) */
+@media (max-width: 480px) {
+    .back-to-top-btn {
+        width: 64px !important;
+        height: 64px !important;
+        font-size: 28px !important;
+        right: 16px !important;
+        bottom: 18px !important;
+    }
+}
+
+/* Очень маленькие экраны (до 380px) */
+@media (max-width: 380px) {
+    .back-to-top-btn {
+        width: 58px !important;
+        height: 58px !important;
+        font-size: 26px !important;
+        right: 12px !important;
+        bottom: 14px !important;
     }
 }

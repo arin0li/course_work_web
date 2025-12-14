@@ -1492,16 +1492,15 @@ text-align: center;
 }
 
 /* Отступ от шапки для баннера на мобильных и планшетах */
-@media (max-width: 1279px) {
-  .vinogradny-hero {
-    margin-top: 130px !important;
-    padding-top: 40px !important;
+@media (max-width: 767px) {
+  .park-hero {
+    margin-top: 60px !important;
   }
 }
 
-@media (max-width: 480px) {
-  .vinogradny-hero {
-    margin-top: 170px !important;
+@media (min-width: 768px) and (max-width: 1279px) {
+  .park-hero {
+    margin-top: 70px !important;
   }
 }
 

@@ -203,144 +203,85 @@
    АДАПТИВНОСТЬ
    ============================================ */
 
-/* Мобильный ≤795px */
-@media (max-width: 795px) {
+/* Мобильный и планшет ≤1279px — НА ВЕСЬ ЭКРАН */
+@media (max-width: 1279px) {
   .modal {
-    padding: 10px 20px 20px 20px;
-    align-items: flex-start;
+    padding: 15px !important;
+    align-items: flex-start !important;
   }
 
   .modal__content {
-    width: 95% !important;
-    max-width: 95% !important;
-    margin: 5% auto !important;
-    max-height: 90vh !important;
-    border-radius: 20px;
+    width: calc(100% - 30px) !important;
+    max-width: calc(100% - 30px) !important;
+    min-height: calc(100vh - 100px) !important;
+    max-height: calc(100vh - 30px) !important;
+    margin: 15px auto !important;
+    border-radius: 20px !important;
+    overflow-y: auto !important;
   }
 
   .modal__content--favorites {
-    max-width: 95% !important;
+    width: calc(100% - 30px) !important;
+    max-width: calc(100% - 30px) !important;
   }
 
   .modal__content--favorites .modal__title {
-    padding: 20px 20px 0 20px !important;
-    font-size: 22px !important;
+    padding: 25px 25px 0 25px !important;
+    font-size: 24px !important;
     margin-bottom: 20px !important;
   }
 
   .modal__close {
     right: 15px !important;
     top: 15px !important;
-    width: 45px !important;
-    height: 45px !important;
-    font-size: 35px !important;
-    border: 2px solid #fff !important;
+    width: 50px !important;
+    height: 50px !important;
+    font-size: 40px !important;
+    border: 3px solid #fff !important;
+    z-index: 1002 !important;
   }
 
   .favorites-content {
     padding: 20px !important;
-    max-height: calc(90vh - 100px) !important;
+    max-height: none !important;
+    overflow-y: visible !important;
   }
 
   .favorites-empty {
-    padding: 40px 20px !important;
-    font-size: 16px !important;
+    padding: 60px 20px !important;
+    font-size: 18px !important;
   }
 
   .favorite-item {
     flex-direction: column !important;
     gap: 15px !important;
-    padding: 15px !important;
+    padding: 20px !important;
     margin-bottom: 20px !important;
   }
 
   .favorite-item__image {
     width: 100% !important;
-    height: 200px !important;
+    height: 250px !important;
     min-width: 100% !important;
   }
 
   .favorite-item__title {
-    font-size: 18px !important;
+    font-size: 20px !important;
   }
 
   .favorite-item__desc {
-    font-size: 13px !important;
+    font-size: 15px !important;
+    line-height: 1.6 !important;
   }
 
   .favorite-item__remove {
     width: 100% !important;
     justify-content: center !important;
-    padding: 12px 20px !important;
-    font-size: 13px !important;
+    padding: 15px 25px !important;
+    font-size: 15px !important;
   }
 }
 
-/* Планшет 768–1023px */
-@media (min-width: 768px) and (max-width: 1023px) {
-  .modal {
-    padding: 24px;
-    align-items: flex-start;
-  }
-
-  .modal__content {
-    margin: 5% auto 0 auto !important;
-    width: 90% !important;
-    max-width: 90% !important;
-  }
-
-  .modal__content--favorites {
-    max-width: 90% !important;
-  }
-
-  .modal__content--favorites .modal__title {
-    padding: 20px 20px 0 20px !important;
-    font-size: 24px !important;
-  }
-
-  .favorites-content {
-    padding: 20px 30px 30px 40px !important;
-  }
-
-  .favorite-item {
-    gap: 20px !important;
-    padding: 18px !important;
-  }
-
-  .favorite-item__image {
-    width: 140px !important;
-    height: 140px !important;
-    min-width: 140px !important;
-  }
-
-  .favorite-item__title {
-    font-size: 19px !important;
-  }
-
-  .favorite-item__desc {
-    font-size: 14px !important;
-  }
-}
-
-/* Промежуточный 1024–1279px */
-@media (min-width: 1024px) and (max-width: 1279px) {
-  .modal {
-    padding: 24px;
-    align-items: flex-start;
-  }
-
-  .modal__content {
-    margin: 5% auto 0 auto !important;
-  }
-
-  .modal__content--favorites {
-    max-width: 850px !important;
-  }
-
-  .favorites-content {
-    padding: 20px 35px 35px 50px !important;
-  }
-}
 
 /* Десктоп ≥1280px */
 @media (min-width: 1280px) {

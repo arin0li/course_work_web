@@ -1311,10 +1311,6 @@
     margin-top: 30px;
   }
 
-  .routes-hero {
-    margin-top: 80px !important;
-  }
-  
   .routes-hero__title {
     font-size: 24px;
     padding: 0 15px;
@@ -1341,10 +1337,6 @@
 
 /* Tablet (768px+) - точно как на главной странице */
 @media (min-width: 768px) {
-  .routes-hero {
-    margin-top: 80px !important;
-  }
-  
   .routes-hero__title {
     font-size: 36px;
     padding: 0 20px;
@@ -1385,41 +1377,23 @@
 }
 
 /* ======================================================
-   ОТСТУП ПОД ШАПКУ
+   ОТСТУП ПОД ШАПКУ — минимальные значения
    ====================================================== */
-@media (max-width: 480px) {
+@media (max-width: 767px) {
   .hero,
   .routes-hero,
   .attractions-hero,
   .tips-hero {
-    margin-top: 170px !important;
+    margin-top: 60px !important;
   }
 }
 
-@media (min-width: 481px) and (max-width: 767px) {
+@media (min-width: 768px) and (max-width: 1279px) {
   .hero,
   .routes-hero,
   .attractions-hero,
   .tips-hero {
-    margin-top: 130px !important;
-  }
-}
-
-@media (min-width: 768px) and (max-width: 1000px) {
-  .hero,
-  .routes-hero,
-  .attractions-hero,
-  .tips-hero {
-    margin-top: 140px !important;
-  }
-}
-
-@media (min-width: 1001px) and (max-width: 1279px) {
-  .hero,
-  .routes-hero,
-  .attractions-hero,
-  .tips-hero {
-    margin-top: 110px !important;
+    margin-top: 70px !important;
   }
 }
 

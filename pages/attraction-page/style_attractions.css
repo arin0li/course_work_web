@@ -409,25 +409,29 @@ gap: 40px;
 .footer__logo {
   font-family: 'Rubik', sans-serif;
   font-weight: 800;
-  font-size: 16px;
+  font-size: 22px;
   color: #000;
   margin: 0;
 }
 
 .footer__nav {
   display: flex;
-  flex-direction: row;
-  gap: 15px;
+  flex-direction: column;
+  gap: 12px;
   flex-wrap: wrap;
 }
 
 .footer__link {
   font-family: 'Montserrat', sans-serif;
   font-weight: 500;
-  font-size: 11px;
+  font-size: 15px;
   color: #000;
   text-decoration: none;
-  white-space: nowrap;
+  transition: color 0.3s ease;
+}
+
+.footer__link:hover {
+  color: #4B99B2;
 }
 
 .footer__right {
@@ -466,47 +470,93 @@ gap: 40px;
 @media (max-width: 767px) {
   .footer {
     min-height: auto !important;
-    padding: 15px 0 !important;
+    padding: 40px 0 30px !important;
   }
 
   .footer__container {
     flex-direction: column !important;
-    align-items: flex-start !important;
-    gap: 15px !important;
-    padding: 0 15px !important;
+    align-items: center !important;
+    gap: 30px !important;
+    padding: 0 20px !important;
+    text-align: center !important;
+  }
+
+  .footer__column-logo,
+  .footer__column-nav,
+  .footer__column-contacts,
+  .footer__column-right {
+    align-items: center !important;
+    text-align: center !important;
   }
 
   .footer__left {
     width: 100% !important;
-    gap: 15px !important;
+    gap: 20px !important;
   }
 
   .footer__logo {
-    font-size: 14px !important;
+    font-size: 24px !important;
+    margin-bottom: 10px !important;
   }
 
+  .footer__nav-title,
+  .footer__contacts-title {
+    font-size: 18px !important;
+    margin-bottom: 15px !important;
+  }
 
+  .footer__nav {
+    gap: 10px !important;
+    align-items: center !important;
+  }
 
   .footer__link {
-    font-size: 10px !important;
+    font-size: 16px !important;
+    padding: 6px 0 !important;
   }
 
   .footer__right {
     width: 100% !important;
-    gap: 15px !important;
+    gap: 20px !important;
     flex-direction: column !important;
-    align-items: flex-start !important;
+    align-items: center !important;
   }
 
-  .footer__contacts {
-    font-size: 10px !important;
+  .footer__contacts,
+  .footer__address-text,
+  .footer__hours-item {
+    font-size: 15px !important;
+  }
+
+  .footer__address-label,
+  .footer__hours-label {
+    font-size: 16px !important;
+    font-weight: 600 !important;
+  }
+
+  .footer__phone {
+    font-size: 18px !important;
+    font-weight: 700 !important;
+  }
+
+  .footer__email {
+    font-size: 16px !important;
+  }
+
+  .footer__socials-label {
+    font-size: 15px !important;
+  }
+
+  .footer__socials {
+    gap: 18px !important;
+    justify-content: center !important;
   }
 
   .footer__icon {
-    width: 24px !important;
-    height: 24px !important;
+    width: 40px !important;
+    height: 40px !important;
   }
-  }
+}
 
 
 /* Футер для десктопа */
@@ -923,71 +973,134 @@ gap: 40px;
     margin-top: 5px;
   }
 
+  /* Слайдер — мобильные */
   .slider-card {
-    width: 280px;
-    height: auto;
+    width: 300px !important;
+    height: auto !important;
   }
   
   .slider-card__img {
-    height: 200px;
+    height: 200px !important;
   }
   
   .slider-card__title {
-    font-size: 14px;
-    padding: 15px 20px 25px 20px;
-    height: auto;
-    white-space: normal;
-    word-wrap: break-word;
-    word-break: break-word;
-    overflow-wrap: break-word;
+    font-size: 16px !important;
+    padding: 18px 22px 22px 22px !important;
+    height: auto !important;
+    min-height: 65px !important;
+    white-space: normal !important;
+    word-wrap: break-word !important;
+    word-break: break-word !important;
+    overflow-wrap: break-word !important;
+    line-height: 1.5 !important;
+  }
+  
+  .slider-card__title-click {
+    font-size: 16px !important;
   }
   
   .slider-btn {
-    width: 60px;
-    height: 60px;
+    width: 55px !important;
+    height: 55px !important;
   }
   
   .slider-btn.prev {
-    left: 10px;
+    left: 8px !important;
   }
   
   .slider-btn.next {
-    right: 10px;
+    right: 8px !important;
   }
   
   .slider-btn img {
-    width: 30px;
-    height: 30px;
+    width: 28px !important;
+    height: 28px !important;
   }
   
   #map {
-    height: 300px !important;
+    height: 280px !important;
+    border-radius: 16px !important;
+  }
+  
+  .slider-container {
+    margin-top: -60px !important;
+  }
+  
+  .slider-track {
+    gap: 15px !important;
+    padding: 0 10px !important;
   }
   
   .modal__content {
-    width: 95%;
-    margin: 10% auto;
+    width: 95% !important;
+    margin: 10% auto !important;
+    border-radius: 16px !important;
   }
 
-  /* Исправление большого текста перед футером */
+  /* Большой текст перед футером */
   .routespage__title {
-    font-size: 20px !important;
-    padding: 20px 15px;
-    line-height: 1.4;
+    font-size: 22px !important;
+    padding: 25px 20px !important;
+    line-height: 1.5 !important;
   }
 
   .routespage__header {
-    height: auto;
-    min-height: 60px;
-    padding: 15px 10px;
+    height: auto !important;
+    min-height: 80px !important;
+    padding: 20px 15px !important;
   }
 
   .routespage__header-outer {
-    margin-top: 30px;
+    margin-top: 30px !important;
   }
 
   .attractions-hero__title {
-    font-size: 28px;
+    font-size: 30px !important;
+    line-height: 1.2 !important;
+  }
+  
+  /* Тулбар сортировки */
+  .catalog__toolbar {
+    width: 92% !important;
+    padding: 20px !important;
+    margin: 25px auto !important;
+    border-radius: 20px !important;
+  }
+  
+  .sort__label {
+    font-size: 14px !important;
+    text-align: center !important;
+  }
+  
+  .sort__select {
+    font-size: 15px !important;
+    padding: 12px 16px !important;
+    border-radius: 10px !important;
+  }
+  
+  .toolbar__show-btn {
+    font-size: 16px !important;
+    padding: 14px 30px !important;
+  }
+  
+  /* Кнопка избранного на карточке */
+  .favorite-btn-attraction {
+    width: 45px !important;
+    height: 45px !important;
+    top: 12px !important;
+    right: 12px !important;
+  }
+  
+  .favorite-btn-attraction i {
+    font-size: 20px !important;
+  }
+  
+  /* Цитата */
+  .catalog__quote {
+    font-size: 22px !important;
+    margin-top: 30px !important;
+    margin-bottom: 15px !important;
+    line-height: 1.4 !important;
   }
 }
 
@@ -1022,6 +1135,95 @@ gap: 40px;
     height: auto;
     min-height: 70px;
     padding: 20px;
+  }
+  
+  /* Слайдер на планшете */
+  .slider-card {
+    width: 320px !important;
+    height: auto !important;
+  }
+  
+  .slider-card__img {
+    height: 220px !important;
+  }
+  
+  .slider-card__title {
+    font-size: 16px !important;
+    padding: 20px 25px !important;
+    min-height: 70px !important;
+  }
+  
+  .slider-btn {
+    width: 70px !important;
+    height: 70px !important;
+  }
+  
+  .slider-btn img {
+    width: 35px !important;
+    height: 35px !important;
+  }
+  
+  #map {
+    height: 450px !important;
+  }
+  
+  .catalog__quote {
+    font-size: 28px !important;
+    padding: 0 20px !important;
+  }
+  
+  .catalog__toolbar {
+    width: 90% !important;
+    max-width: 700px !important;
+    padding: 20px 25px !important;
+  }
+  
+  .toolbar__inner {
+    flex-direction: row !important;
+    flex-wrap: wrap !important;
+    justify-content: center !important;
+    gap: 15px !important;
+  }
+  
+  .toolbar__sort {
+    flex-direction: row !important;
+    flex-wrap: wrap !important;
+    justify-content: center !important;
+  }
+}
+
+/* Промежуточная адаптация (1024-1279px) */
+@media (min-width: 1024px) and (max-width: 1279px) {
+  .attractions-hero {
+    height: 260px !important;
+    min-height: 260px !important;
+    max-height: 260px !important;
+  }
+  
+  .attractions-hero__title {
+    font-size: 50px !important;
+  }
+  
+  .slider-card {
+    width: 300px !important;
+  }
+  
+  .slider-btn {
+    width: 75px !important;
+    height: 75px !important;
+  }
+  
+  #map {
+    height: 500px !important;
+  }
+  
+  .catalog__quote {
+    font-size: 34px !important;
+  }
+  
+  .catalog__toolbar {
+    width: 95% !important;
+    max-width: 900px !important;
   }
 }  
 
@@ -2339,25 +2541,22 @@ font-size: 12px;
 
 /* ======================================================
    ИСПРАВЛЕНИЕ: ШАПКА НЕ ЗАКРЫВАЕТ БАННЕР НА МОБИЛКЕ/ПЛАНШЕТЕ
-   Только до 1279 px — десктоп не трогаем!
    ====================================================== */
 
-   @media (max-width: 1279px) {
+/* Планшеты и промежуточные экраны */
+@media (min-width: 768px) and (max-width: 1279px) {
     .routes-hero,
     .attractions-hero,
-    .tips-hero,
-    .hero {
-        margin-top: 130px !important;   /* отступ под высокую шапку (2–3 строки) */
-        padding-top: 40px !important;   /* дополнительный воздух, чтобы текст не прилипал */
+    .tips-hero {
+        margin-top: 70px !important;
     }
 }
 
-/* На совсем маленьких экранах — чуть больше отступа */
-@media (max-width: 480px) {
+/* Мобильные */
+@media (max-width: 767px) {
     .routes-hero,
     .attractions-hero,
-    .tips-hero,
-    .hero {
-        margin-top: 170px !important;
+    .tips-hero {
+        margin-top: 60px !important;
     }
 }

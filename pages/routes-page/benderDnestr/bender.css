@@ -641,7 +641,7 @@
     height: 320px !important;
     min-height: 320px !important;
     padding: 0 20px !important;
-    margin-top: 170px !important;
+    margin-top: 60px !important;
     justify-content: flex-start !important;
     align-items: center !important;
   }
@@ -1565,16 +1565,15 @@
 }
 
 /* Дополнительно: общие фиксы для всех размеров */
-@media (max-width: 1279px) {
+@media (max-width: 767px) {
   .bender-hero {
-    margin-top: 130px !important;
-    padding-top: 40px !important;
+    margin-top: 60px !important;
   }
 }
 
-@media (max-width: 480px) {
+@media (min-width: 768px) and (max-width: 1279px) {
   .bender-hero {
-    margin-top: 170px !important;
+    margin-top: 70px !important;
   }
 }
 
