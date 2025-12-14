@@ -127,7 +127,8 @@
         padding: 12px 20px !important;
     }
     .logo__title {
-        font-size: 17px;
+        font-size: 20px !important;
+        line-height: 1.3 !important;
     }
     .nav__link {
         font-size: 12.5px;
@@ -314,23 +315,8 @@
     }
 }
 
-/* Мобильные (до 767px) — крупные шрифты */
+/* Мобильные (до 767px) — дополнительные стили для бургер-меню */
 @media (max-width: 767px) {
-    .header {
-        padding: 12px 0 !important;
-        min-height: 60px !important;
-    }
-    
-    .header__container {
-        min-height: 60px !important;
-        padding: 12px 20px !important;
-    }
-    
-    .logo__title {
-        font-size: 20px !important;
-        line-height: 1.3 !important;
-    }
-    
     .burger-menu {
         padding: 14px !important;
         right: 15px !important;
