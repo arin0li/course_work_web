@@ -1,0 +1,326 @@
+/* ============================================
+   ФУТЕР В СТИЛЕ 4 КОЛОНОК (как на картинке)
+   ============================================ */
+
+.footer {
+  width: 100%;
+  background: #D9D9D9;
+  padding: 60px 20px 40px;
+  color: #000;
+}
+
+.footer__container {
+  max-width: 1440px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 40px;
+  align-items: start;
+}
+
+/* Колонка 1: Логотип + Копирайт */
+.footer__column-logo {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.footer__logo {
+  font-family: 'Rubik', sans-serif;
+  font-weight: 800;
+  font-size: 24px;
+  color: #000;
+  margin: 0;
+  line-height: 1.2;
+}
+
+.footer__copyright {
+  display: none;
+}
+
+/* Колонка 2: Навигация */
+.footer__column-nav {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.footer__nav-title {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+  font-size: 14px;
+  color: #000;
+  margin: 0 0 10px 0;
+  text-transform: uppercase;
+}
+
+.footer__nav {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer__link {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 500;
+  font-size: 13px;
+  color: #000;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.footer__link:hover {
+  color: #4B99B2;
+}
+
+/* Колонка 3: Контакты (адрес и режим работы) */
+.footer__column-contacts {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.footer__contacts-title {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+  font-size: 14px;
+  color: #000;
+  margin: 0 0 10px 0;
+  text-transform: uppercase;
+}
+
+.footer__address-block,
+.footer__hours-block {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.footer__address-label,
+.footer__hours-label {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 600;
+  font-size: 12px;
+  color: #000;
+  margin: 0;
+}
+
+.footer__address-text,
+.footer__hours-text {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 400;
+  font-size: 12px;
+  color: #000;
+  line-height: 1.5;
+  margin: 0;
+}
+
+.footer__hours-item {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 400;
+  font-size: 12px;
+  color: #000;
+  margin: 0;
+}
+
+/* Колонка 4: Телефон + Почта + Соцсети */
+.footer__column-right {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.footer__phone-block {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.footer__phone {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 600;
+  font-size: 14px;
+  color: #000;
+  margin: 0;
+}
+
+.footer__email {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 400;
+  font-size: 13px;
+  color: #000;
+  margin: 0;
+  text-decoration: none;
+}
+
+.footer__email:hover {
+  color: #4B99B2;
+}
+
+.footer__socials-label {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 600;
+  font-size: 12px;
+  color: #000;
+  margin: 0 0 10px 0;
+}
+
+.footer__socials {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+}
+
+.footer__icon {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  transition: transform 0.3s ease;
+}
+
+.footer__icon:hover {
+  transform: scale(1.1);
+}
+
+/* Старые классы для обратной совместимости */
+.footer__left {
+  display: contents;
+}
+
+.footer__right {
+  display: contents;
+}
+
+.footer__contacts {
+  display: contents;
+}
+
+.footer__contact {
+  display: none;
+}
+
+.footer__contact-img {
+  display: none;
+}
+
+.footer__contact-text {
+  display: none;
+}
+
+/* ============================================
+   АДАПТИВНОСТЬ
+   ============================================ */
+
+/* Планшет (768px - 1023px) */
+@media (min-width: 768px) and (max-width: 1023px) {
+  .footer {
+    padding: 50px 20px 35px;
+  }
+
+  .footer__container {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+  }
+
+  .footer__logo {
+    font-size: 22px;
+  }
+
+  .footer__nav-title,
+  .footer__contacts-title {
+    font-size: 13px;
+  }
+
+  .footer__link {
+    font-size: 12px;
+  }
+
+  .footer__column-contacts {
+    margin-top: -20px;
+  }
+}
+
+/* Мобильные (до 767px) */
+@media (max-width: 767px) {
+  .footer {
+    padding: 40px 15px 30px;
+  }
+
+  .footer__container {
+    grid-template-columns: 1fr;
+    gap: 30px;
+    text-align: center;
+  }
+
+  .footer__column-logo,
+  .footer__column-nav,
+  .footer__column-contacts,
+  .footer__column-right {
+    align-items: center;
+  }
+
+  .footer__logo {
+    font-size: 20px;
+  }
+
+  .footer__nav-title,
+  .footer__contacts-title {
+    font-size: 12px;
+  }
+
+  .footer__link {
+    font-size: 11px;
+  }
+
+  .footer__address-label,
+  .footer__hours-label,
+  .footer__address-text,
+  .footer__hours-text,
+  .footer__hours-item {
+    font-size: 11px;
+  }
+
+  .footer__phone {
+    font-size: 13px;
+  }
+
+  .footer__email {
+    font-size: 12px;
+  }
+
+  .footer__socials-label {
+    font-size: 11px;
+  }
+
+  .footer__icon {
+    width: 28px;
+    height: 28px;
+  }
+}
+
+/* Десктоп (1280px+) */
+@media (min-width: 1280px) {
+  .footer {
+    padding: 50px 20px 40px;
+  }
+
+  .footer__container {
+    gap: 50px;
+  }
+
+  .footer__logo {
+    font-size: 24px;
+  }
+
+  .footer__nav-title,
+  .footer__contacts-title {
+    font-size: 14px;
+  }
+
+  .footer__link {
+    font-size: 13px;
+  }
+}
