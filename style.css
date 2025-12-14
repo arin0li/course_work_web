@@ -2352,7 +2352,7 @@ body {
         padding: 140px 15px 80px !important;   /* больше воздуха сверху */
         background: 
             linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.6)),
-            url('_6.jpg') center/cover no-repeat !important;
+            url('assets/images/_6.jpg') center/cover no-repeat !important;
         display: flex;
         align-items: center;
         justify-content: center;
