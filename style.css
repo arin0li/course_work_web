@@ -2503,3 +2503,154 @@ body {
         box-sizing: border-box !important;
     }
 }
+
+/* ============================================
+   МОБИЛЬНАЯ АДАПТАЦИЯ - КРАСИВЫЕ БОЛЬШИЕ КАРТОЧКИ
+   ============================================ */
+@media (max-width: 768px) {
+    /* === БУРГЕР-МЕНЮ === */
+    .nav__list {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background: linear-gradient(180deg, #2D5016, #295B68);
+        padding: 20px;
+        gap: 15px;
+        box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+    }
+    
+    .nav__list.active {
+        display: flex;
+    }
+    
+    .burger-menu {
+        display: flex !important;
+        flex-direction: column;
+        gap: 5px;
+        cursor: pointer;
+        padding: 10px;
+        z-index: 1001;
+    }
+    
+    .burger-menu span {
+        width: 25px;
+        height: 3px;
+        background: white;
+        border-radius: 2px;
+        transition: 0.3s;
+    }
+    
+    .burger-menu.active span:nth-child(1) {
+        transform: rotate(45deg) translate(5px, 5px);
+    }
+    
+    .burger-menu.active span:nth-child(2) {
+        opacity: 0;
+    }
+    
+    .burger-menu.active span:nth-child(3) {
+        transform: rotate(-45deg) translate(7px, -6px);
+    }
+    
+    /* === СЕКЦИИ - БОЛЬШЕ ОТСТУПОВ === */
+    .attractions,
+    .routes {
+        padding: 60px 15px !important;
+    }
+    
+    .attractions__title,
+    .routes__title {
+        font-size: 24px !important;
+        margin-bottom: 30px !important;
+    }
+    
+    /* === КАРТОЧКИ - ОДНА В РЯД, БОЛЬШИЕ === */
+    .attractions__grid,
+    .routes__grid {
+        display: flex !important;
+        flex-direction: column !important;
+        gap: 25px !important;
+        padding: 0 !important;
+        max-width: 100% !important;
+    }
+    
+    .attraction-card,
+    .routes-card {
+        width: 100% !important;
+        min-height: 420px !important;
+        border-radius: 20px !important;
+        overflow: hidden !important;
+        position: relative !important;
+    }
+    
+    /* === КОНТЕНТ КАРТОЧКИ === */
+    .attraction-card__content,
+    .routes-card__content {
+        padding: 20px !important;
+        position: absolute !important;
+        bottom: 0 !important;
+        left: 0 !important;
+        right: 0 !important;
+        background: linear-gradient(transparent, rgba(0,0,0,0.85)) !important;
+    }
+    
+    /* === НАЗВАНИЕ - КРУПНОЕ === */
+    .attraction-card__name,
+    .routes-card__name {
+        font-size: 20px !important;
+        font-weight: 700 !important;
+        line-height: 1.3 !important;
+        margin-bottom: 10px !important;
+        color: white !important;
+    }
+    
+    /* === ОПИСАНИЕ - ЧИТАЕМОЕ === */
+    .attraction-card__desc,
+    .routes-card__desc {
+        font-size: 14px !important;
+        line-height: 1.6 !important;
+        color: rgba(255,255,255,0.9) !important;
+        margin-bottom: 15px !important;
+    }
+    
+    /* === ИНФОРМАЦИЯ О МАРШРУТЕ === */
+    .routes-card__info {
+        font-size: 13px !important;
+        margin-bottom: 10px !important;
+        color: rgba(255,255,255,0.8) !important;
+    }
+    
+    .routes-card__info-item {
+        margin-right: 15px !important;
+    }
+    
+    /* === КНОПКА - БОЛЬШАЯ === */
+    .attraction-card__btn,
+    .routes-card__btn {
+        padding: 14px 30px !important;
+        font-size: 15px !important;
+        border-radius: 30px !important;
+        font-weight: 600 !important;
+    }
+    
+    /* === ИКОНКА ИЗБРАННОГО === */
+    .favorite-btn-attraction,
+    .favorite-btn-route {
+        width: 44px !important;
+        height: 44px !important;
+        font-size: 20px !important;
+        top: 15px !important;
+        left: 15px !important;
+    }
+    
+    /* === БЫСТРЫЙ ПРОСМОТР === */
+    .routes-card__quick {
+        font-size: 13px !important;
+        padding: 8px 16px !important;
+        top: 15px !important;
+        right: 15px !important;
+    }
+}

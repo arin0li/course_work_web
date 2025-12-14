@@ -24,6 +24,11 @@
         </div>
     
         <nav class="nav">
+          <div class="burger-menu" onclick="toggleMenu()">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
           <ul class="nav__list">
             <li class="nav__item"><a href="#hero" class="nav__link">Главная</a></li>
             <li class="nav__item"><a href="#routes" class="nav__link">Маршруты</a></li>
@@ -588,6 +593,26 @@
 <script src="blocks/quick-view/quick-view.js"></script>
 <script src="blocks/modals/tips-modals.js"></script>
 <script src="blocks/image-viewer/image-viewer.js"></script>
+
+<script>
+// Бургер-меню
+function toggleMenu() {
+    const burger = document.querySelector('.burger-menu');
+    const navList = document.querySelector('.nav__list');
+    burger.classList.toggle('active');
+    navList.classList.toggle('active');
+}
+
+// Закрыть меню при клике на ссылку
+document.querySelectorAll('.nav__link').forEach(link => {
+    link.addEventListener('click', () => {
+        const burger = document.querySelector('.burger-menu');
+        const navList = document.querySelector('.nav__list');
+        burger.classList.remove('active');
+        navList.classList.remove('active');
+    });
+});
+</script>
 
     </body>
 </html>

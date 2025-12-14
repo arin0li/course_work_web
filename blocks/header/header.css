@@ -195,3 +195,81 @@
     }
 }
 
+/* ============================================
+   БУРГЕР-МЕНЮ - СКРЫТО НА ДЕСКТОПЕ
+   ============================================ */
+.burger-menu {
+    display: none;
+}
+
+@media (max-width: 768px) {
+    .burger-menu {
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+        cursor: pointer;
+        padding: 10px;
+        z-index: 1001;
+        position: absolute;
+        right: 15px;
+        top: 50%;
+        transform: translateY(-50%);
+    }
+    
+    .burger-menu span {
+        width: 28px;
+        height: 3px;
+        background: white;
+        border-radius: 2px;
+        transition: 0.3s ease;
+    }
+    
+    .burger-menu.active span:nth-child(1) {
+        transform: rotate(45deg) translate(6px, 6px);
+    }
+    
+    .burger-menu.active span:nth-child(2) {
+        opacity: 0;
+    }
+    
+    .burger-menu.active span:nth-child(3) {
+        transform: rotate(-45deg) translate(6px, -6px);
+    }
+    
+    .header__container {
+        position: relative;
+    }
+    
+    .nav {
+        position: static;
+    }
+    
+    .nav__list {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background: linear-gradient(180deg, #2D5016, #295B68);
+        padding: 25px 20px;
+        gap: 20px;
+        box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+        z-index: 999;
+    }
+    
+    .nav__list.active {
+        display: flex;
+    }
+    
+    .nav__item {
+        text-align: center;
+    }
+    
+    .nav__link {
+        font-size: 16px;
+        padding: 10px;
+        display: block;
+    }
+}
+
