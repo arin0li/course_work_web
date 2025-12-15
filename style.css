@@ -1637,7 +1637,7 @@ body {
 @media (max-width: 767px) {
   .hero__title {
     font-size: 32px;
-    padding: 0 20px;
+    padding: 0 0px;
   }
 
   .hero__content {
