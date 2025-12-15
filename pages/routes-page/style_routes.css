@@ -150,10 +150,9 @@
   
       /* Поиск первым после баннера */
       .catalog__search-bar {
-        width: 100%;
         max-width: 1200px;
         margin: 30px auto 20px;
-        padding: 0 20px;
+        padding: 0 20px 0 30px;
         position: relative;
       }
 
@@ -177,7 +176,6 @@
 
       /* Фильтры горизонтально */
       .catalog__filters-bar {
-        width: 100%;
         max-width: 1200px;
         margin: 0 auto 30px;
         padding: 15px 20px;
