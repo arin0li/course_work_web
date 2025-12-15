@@ -3314,7 +3314,6 @@ body {
         bottom: auto !important;
         left: 25px !important;
         right: 25px !important;
-        max-height: 180px !important;
         overflow: hidden !important;
     }
     
@@ -3326,7 +3325,6 @@ body {
         bottom: auto !important;
         left: 25px !important;
         right: 25px !important;
-        max-height: 150px !important;
         overflow: hidden !important;
     }
     
