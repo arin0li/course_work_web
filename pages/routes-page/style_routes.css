@@ -1117,7 +1117,7 @@
   }
   
   .route-card {
-    width: 100% !important;
+    width: 90vw !important;
     max-width: 100% !important;
     height: auto;
     flex-direction: column;
